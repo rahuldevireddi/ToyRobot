@@ -1,0 +1,19 @@
+PROJECT(ToyRobot)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0)
+ENABLE_TESTING()
+
+# Sources:
+SET(ToyRobot_SRCS
+    ToyRobot.cpp
+    ToyRobotMain.cpp
+)
+
+SET(ToyRobot_HDRS
+    ToyRobot.h
+)
+
+ADD_SUBDIRECTORY(UnitTests)
+SET_SOURCE_FILES_PROPERTIES(${ToyRobot_SRCS} PROPERTIES LANGUAGE CXX)
+
+ADD_LIBRARY(ToyRobotLib ${ToyRobot_SRCS} ${ToyRobot_HDRS})
+ADD_EXECUTABLE(ToyRobot ${ToyRobot_SRCS})
